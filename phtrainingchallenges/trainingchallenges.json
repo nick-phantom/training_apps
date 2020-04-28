@@ -1,0 +1,53 @@
+{
+    "appid": "9e21909c-30f9-49e6-be08-9670a98ae5b3",
+    "name": "Training Challenges",
+    "description": "Generates sample data for training challenges",
+    "type": "siem",
+    "product_vendor": "Phantom",
+    "logo": "trainingchallenges.png",
+    "logo_dark": "trainingchallenges_dark.png",
+    "product_name": "Training",
+    "product_version_regex": ".*",
+    "publisher": "Phantom",
+    "license": "Copyright (c) Phantom, 2018",
+    "app_version": "1.0.0",
+    "utctime_updated": "2018-06-27T18:31:00.008498Z",
+    "package_name": "phantom_trainingchallenges",
+    "main_module": "trainingchallenges_connector.py",
+    "min_phantom_version": "3.5.208",
+    "app_wizard_version": "1.0.0",
+    "configuration": {        
+    	"email": {
+            "description": "Your Email",
+            "data_type": "string",
+            "required": true,
+            "value_list": [],
+            "default": "",
+            "order": 0
+            }
+	},
+    "actions": [
+        {
+            "action": "test connectivity",
+            "identifier": "test_connectivity",
+            "description": "Validate the asset configuration for connectivity using supplied configuration",
+            "verbose": "",
+            "type": "test",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "on poll",
+            "identifier": "on_poll",
+            "description": "Callback action for the on_poll ingest functionality",
+            "verbose": "",
+            "type": "ingest",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        }
+    ]
+}
