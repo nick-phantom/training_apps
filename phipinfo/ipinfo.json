@@ -1,0 +1,204 @@
+{
+    "appid": "eb56ac0a-05df-47ef-ba86-48f25d79f95a",
+    "name": "ipinfo",
+    "description": "ipinfo",
+    "type": "information",
+    "product_vendor": "ipinfo",
+    "logo": "ipinfo.png",
+    "logo_dark": "ipinfo_dark.png",
+    "product_name": "ipinfo",
+    "python_version": "3",
+    "product_version_regex": ".*",
+    "publisher": "ipinfo",
+    "license": "Copyright (c) ipinfo, 2020",
+    "app_version": "1.0.0",
+    "utctime_updated": "2020-04-28T16:43:53.908969Z",
+    "package_name": "phantom_ipinfo",
+    "main_module": "ipinfo_connector.py",
+    "min_phantom_version": "4.8.24304",
+    "app_wizard_version": "1.0.0",
+    "configuration": {
+        "base_url": {
+            "description": "base url to connect to",
+            "data_type": "string",
+            "required": false,
+            "value_list": [],
+            "default": "https://ipinfo.io",
+            "order": 0
+        }
+    },
+    "actions": [
+        {
+            "action": "test connectivity",
+            "identifier": "test_connectivity",
+            "description": "Validate the asset configuration for connectivity using supplied configuration",
+            "verbose": "",
+            "type": "test",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "lookup ip",
+            "identifier": "lookup_ip",
+            "description": "Check for the presence of an IP in a threat intelligence feed",
+            "verbose": "",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "ip": {
+                    "description": "IP to lookup",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "ip"
+                    ],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.parameter.ip",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "column_name": "ip",
+                    "column_order": 0,
+                    "example_values": [
+                        "8.8.8.8"
+                    ]
+                },
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success"
+                    ]
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string",
+                    "example_values": [
+                        "Hostname: dns.google"
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.city",
+                    "data_type": "string",
+                    "example_values": [
+                        "Mountain View"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.org",
+                    "data_type": "string",
+                    "example_values": [
+                        "AS15169 Google LLC"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.loc",
+                    "data_type": "string",
+                    "example_values": [
+                        "37.3860,-122.0838"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.ip",
+                    "data_type": "string",
+                    "example_values": [
+                        "8.8.8.8"
+                    ],
+                    "contains": [
+                        "ip"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.region",
+                    "data_type": "string",
+                    "example_values": [
+                        "California"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.hostname",
+                    "data_type": "string",
+		    "column_name": "Hostname",
+		    "column_order": 2,
+                    "example_values": [
+                        "dns.google"
+                    ],
+                    "contains": [
+                        "host name"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.country",
+                    "data_type": "string",
+                    "example_values": [
+                        "US"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.readme",
+                    "data_type": "string",
+                    "example_values": [
+                        "https://ipinfo.io/missingauth"
+                    ],
+                    "contains": [
+                        "url"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.timezone",
+                    "data_type": "string",
+                    "example_values": [
+                        "America/Los_Angeles"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.postal",
+                    "data_type": "string",
+                    "example_values": [
+                        "94035"
+                    ]
+                },
+                {
+                    "data_path": "action_result.summary.hostname",
+                    "data_type": "string",
+                    "example_values": [
+                        "dns.google"
+                    ],
+                    "contains": [
+                        "host name"
+                    ]
+                }
+            ],
+            "render": {
+                "type": "table"
+            },
+            "versions": "EQ(*)"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "appid": "84659e1f-795b-4c3d-892f-c79a0e465846",
+    "name": "Json Test",
+    "description": "Imports time from http://date.jsontest.com/",
+    "type": "siem",
+    "product_vendor": "JSON Test",
+    "logo": "jsontest.png",
+    "product_name": "JSON Test",
+    "product_version_regex": ".*",
+    "publisher": "Nick",
+    "license": "Copyright Nick 2018",
+    "app_version": "1.0.0",
+    "utctime_updated": "2018-01-18T20:29:18.894699Z",
+    "package_name": "phantom_jsontest",
+    "main_module": "jsontest_connector.py",
+    "min_phantom_version": "3.0.284",
+    "app_wizard_version": "1.0.0",
+    "configuration": {},
+    "actions": [
+        {
+            "action": "test connectivity",
+            "identifier": "test_connectivity",
+            "description": "Validate the asset configuration for connectivity using supplied configuration",
+            "verbose": "",
+            "type": "test",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "on poll",
+            "identifier": "on_poll",
+            "description": "Callback action for the on_poll ingest functionality",
+            "verbose": "",
+            "type": "ingest",
+            "read_only": true,
+            "parameters": {
+                "container_id": {
+                    "description": "Container IDs to limit the ingestion to",
+                    "data_type": "string",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 0
+                },
+                "artifact_count": {
+                    "description": "Maximum number of artifact records to query for.",
+                    "data_type": "numeric",
+                    "required": false,
+                    "primary": false,
+                    "contains": [],
+                    "value_list": [],
+                    "default": "",
+                    "order": 1
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        }
+    ]
+}
